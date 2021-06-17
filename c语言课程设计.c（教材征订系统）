@@ -24,17 +24,17 @@ void BuildStorageSpace(Node *List);
 Node *resetList(Node *List) ;
 void sortNumber(Node *List);
 Node *resetList(Node *List) ;
-//½¨Á¢´¢´æ½á¹¹ 
+//å»ºç«‹å‚¨å­˜ç»“æ„ 
 	void BuildStorageSpace(Node *List) {
 		Node *p = List->next;
 		FILE *fp;
 		fp = fopen("C:\\Users\\xuhaonan\\ks.txt","w+");
 		if (fp == NULL)
 		{
-			printf("ÎÄ¼ş´ò¿ª³ö´í!");
+			printf("æ–‡ä»¶æ‰“å¼€å‡ºé”™!");
 			exit(0);
 		}
-		fprintf(fp,"ÊéºÅ\tÊéÃû\t×÷Õß\t³ö°æÉç\tÊıÁ¿\tµ¥¼Û\t½ğ¶î\n");
+		fprintf(fp,"ä¹¦å·\tä¹¦å\tä½œè€…\tå‡ºç‰ˆç¤¾\tæ•°é‡\tå•ä»·\té‡‘é¢\n");
 		while(p==NULL) {
 			fprintf(fp,"%s\t",p->no);
 			fprintf(fp,"%s\t",p->name);
@@ -48,25 +48,25 @@ Node *resetList(Node *List) ;
 			fclose(fp);
 		}
 	}
-//Â¼Èë½Ì²ÄÕ÷¶©ĞÅÏ¢
+//å½•å…¥æ•™æå¾è®¢ä¿¡æ¯
 	void inputInformation(Node *p,int i) 
 	{
-		printf("ÇëÊäÈëµÚ%d±¾ÊéºÅ£º",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬ä¹¦å·ï¼š",i+1);
 		scanf("%s",p->no); 
-		printf("ÇëÊäÈëµÚ%d±¾ÊéÃû£º\n",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬ä¹¦åï¼š\n",i+1);
 		scanf("%s",p->name); 
-		printf("ÇëÊäÈëµÚ%d±¾Êé×÷Õß£º\n",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬ä¹¦ä½œè€…ï¼š\n",i+1);
 		scanf("%s",p->author); 
-		printf("ÇëÊäÈëµÚ%d±¾Êé³ö°æÉÌ£º\n",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬ä¹¦å‡ºç‰ˆå•†ï¼š\n",i+1);
 		scanf("%s",p->publisher); 
-		printf("ÇëÊäÈëµÚ%d±¾ÊéÊıÁ¿£º\n",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬ä¹¦æ•°é‡ï¼š\n",i+1);
 		scanf("%d",&p->number); 
-		printf("ÇëÊäÈëµÚ%d±¾µ¥¼Û£º\n",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬å•ä»·ï¼š\n",i+1);
 		scanf("%f",&p->price); 
-		printf("ÇëÊäÈëµÚ%d±¾½ğ¶î£º\n",i+1);
+		printf("è¯·è¾“å…¥ç¬¬%dæœ¬é‡‘é¢ï¼š\n",i+1);
 		scanf("%f",&p->total); 
 	}
-	//³õÊ¼»¯Á´±í
+	//åˆå§‹åŒ–é“¾è¡¨
 	Node *resetList(Node *List) 
 	{
 		Node *head = NULL;
@@ -77,7 +77,7 @@ Node *resetList(Node *List) ;
 		List = head;
 	    return List;
 	}
-//´´½¨Á´±í
+//åˆ›å»ºé“¾è¡¨
 Node *creaList(Node *List,int n)
 {
 	int i;
@@ -91,17 +91,17 @@ Node *creaList(Node *List,int n)
 	}
 	return List;
  } 
-// ²éÕÒ½Ì²ÄĞÅÏ¢
+// æŸ¥æ‰¾æ•™æä¿¡æ¯
  void searchIformation(Node *List) 
  {
  	char n[40];
 	Node *p=List->next;
 	if(p==NULL)
 	{
-		printf("Á´±íÎª¿ÕÎŞ·¨²éÑ¯£¡");
+		printf("é“¾è¡¨ä¸ºç©ºæ— æ³•æŸ¥è¯¢ï¼");
 		return;
 	}
-	printf("ÇëÊäÈëÒª²éÕÒµÄÊéÃû:");
+	printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ä¹¦å:");
     scanf("%s",&n);
 	printf("\n");
 	while(strcmp(n,p->name)!=0)
@@ -109,7 +109,7 @@ Node *creaList(Node *List,int n)
 		p=p->next;
 		if(p==NULL)
 		{
-			printf("Î´²éÑ¯µ½¸ÃÊé");
+			printf("æœªæŸ¥è¯¢åˆ°è¯¥ä¹¦");
 			
 		}
 	} 
@@ -117,55 +117,55 @@ Node *creaList(Node *List,int n)
 		
  }
 
- //ĞŞ¸Ä½Ì²ÄµÄÕ÷¶©ÊıÁ¿
+ //ä¿®æ”¹æ•™æçš„å¾è®¢æ•°é‡
 void reviseInformation(Node *List)
 {
 	char n[40];
 	Node *p=List->next;
 	if(p==NULL)
 	{
-		printf("Á´±íÎª¿ÕÎŞĞŞ¸Ä£¡");
+		printf("é“¾è¡¨ä¸ºç©ºæ— ä¿®æ”¹ï¼");
 		return;
     }
-    printf("ÇëÊäÈëĞèÒªĞŞ¸Ä½Ì²ÄµÄÃû³Æ£º");
+    printf("è¯·è¾“å…¥éœ€è¦ä¿®æ”¹æ•™æçš„åç§°ï¼š");
     scanf("%s",n);
 	while(strcmp(n,p->name)!=0)
 	{
 		p=p->next;
 		if(p==NULL)
 		{
-			printf("ÔİÎŞ´ËÊéĞÅÏ¢£¡");
+			printf("æš‚æ— æ­¤ä¹¦ä¿¡æ¯ï¼");
 			return;
 		}
 	} 
-	printf("ÇëÊäÈëĞŞ¸ÄºóµÄÊıÁ¿");
+	printf("è¯·è¾“å…¥ä¿®æ”¹åçš„æ•°é‡");
 	scanf("%s",p->number);
-	printf("ĞŞ¸Ä³É¹¦\n");
+	printf("ä¿®æ”¹æˆåŠŸ\n");
  } 
-//É¾³ıÄ³±¾½Ì²ÄµÄÏà¹ØĞÅÏ¢
+//åˆ é™¤æŸæœ¬æ•™æçš„ç›¸å…³ä¿¡æ¯
 void deleteInformation(Node *List)
 {
 	char n[40];
 	Node *p=List->next,*q=NULL;
 	if(p==NULL)
 	{
-		printf("Á´±íÎª¿ÕÎŞ·¨É¾³ı£¡");
+		printf("é“¾è¡¨ä¸ºç©ºæ— æ³•åˆ é™¤ï¼");
 		return;
 	}
-	printf("ÇëÊäÈëÒªÉ¾³ıµÄÊéÃû");
+	printf("è¯·è¾“å…¥è¦åˆ é™¤çš„ä¹¦å");
     scanf("%s",n);
 	for(q=List;(strcmp(n,p->name)!=0)&&p;p=p->next)
 		q=p;
 	if(p==NULL)
 	{
-		printf("ÔİÎŞ´ËÊéĞÅÏ¢£¡");
+		printf("æš‚æ— æ­¤ä¹¦ä¿¡æ¯ï¼");
 		return;
 	}
 	q->next=p->next;
 	free(p);
-	printf("É¾³ı³É¹¦\n");
+	printf("åˆ é™¤æˆåŠŸ\n");
  } 
- //¼ÆËãÕ÷¶©×ÜÊı¡¢½ğ¶î
+ //è®¡ç®—å¾è®¢æ€»æ•°ã€é‡‘é¢
  void caculateInformation(Node *List)
  {
  	Node *p;
@@ -179,10 +179,10 @@ void deleteInformation(Node *List)
  		p=p->next;
  		
 	 }
-	 printf("¹²ÓĞ%d±¾Êé£º",sum);
-	 printf("×Ü½ğ¶îÎª%fÔª£º",total);
+	 printf("å…±æœ‰%dæœ¬ä¹¦ï¼š",sum);
+	 printf("æ€»é‡‘é¢ä¸º%få…ƒï¼š",total);
   } 
-  //ÅÅĞò
+  //æ’åº
   void sortNumber(Node *List)
   {
   	Node *head;
@@ -197,14 +197,14 @@ void deleteInformation(Node *List)
   	  	while(pnext!=end && pnext)
   	  	{
   	  		if(p->number<pnext->number)
-				{//±È½ÏÏàÁÚ½ÚµãµÄÊı¾İ´óĞ¡ 
+				{//æ¯”è¾ƒç›¸é‚»èŠ‚ç‚¹çš„æ•°æ®å¤§å° 
  	  		swap(p,pnext);
 			}
-			//pºÍpnextÍ¬Ê±ÏòºóÒÆ¶¯Ò»¸ö½Úµã
+			//på’ŒpnextåŒæ—¶å‘åç§»åŠ¨ä¸€ä¸ªèŠ‚ç‚¹
 			p=p->next;
 			pnext=pnext->next; 
 		}
-		//¸Ã´ÎÑ­»·½áÊøÕÒµ½×î´óÖµ
+		//è¯¥æ¬¡å¾ªç¯ç»“æŸæ‰¾åˆ°æœ€å¤§å€¼
 		end=p;
 	}	
 	for(Node* p=List->next;p;p = p->next)
@@ -212,7 +212,7 @@ void deleteInformation(Node *List)
 		printf("%s%d",p->name,p->number);
 		 }	 
    } 
-   //½»»»º¯Êı
+   //äº¤æ¢å‡½æ•°
    void swap(Node *pre,Node *next)
    {
    	int t=0;
@@ -220,20 +220,20 @@ void deleteInformation(Node *List)
    	pre=next;
    	next=t;
 	} 
-  //ÏµÍ³½çÃæ
+  //ç³»ç»Ÿç•Œé¢
   void systemUI()
   {
-  		printf("\t\t              *  »¶Ó­Ê¹ÓÃ½Ì²ÄÕ÷¶©ÏµÍ³  * \n");
+  		printf("\t\t              *  æ¬¢è¿ä½¿ç”¨æ•™æå¾è®¢ç³»ç»Ÿ  * \n");
 	printf("\t\t____________________________________________________\n");
-	printf("\n\t\t||\t1.Â¼Èë½Ì²ÄÕ÷¶©µÄÏà¹ØĞÅÏ¢\t           ||\n");
-	printf("\t\t||\t2.²éÕÒÄ³±¾½Ì²ÄµÄÏà¹ØĞÅÏ¢\t           ||\n");
-	printf("\t\t||\t3.ĞŞ¸ÄÄ³±¾½Ì²ÄµÄÕ÷¶©ÊıÁ¿\t           ||\n");
-	printf("\t\t||\t4.É¾³ıÄ³±¾½Ì²ÄµÄÏà¹ØĞÅÏ¢	\t   ||\n");
-	printf("\t\t||\t5.Í³¼Æ½Ì²ÄµÄÕ÷¶©×ÜÊı£¬¼ÆËãÕ÷¶©×Ü½ğ¶î\t   ||\n");
-	printf("\t\t||\t6.¶ÔÃ¿±¾½Ì²ÄµÄÕ÷¶©ÊıÁ¿½øĞĞÅÅÃû	\t   ||\n");
-	printf("\t\t||\t0.ÍË³ö	\t                           ||\n");
+	printf("\n\t\t||\t1.å½•å…¥æ•™æå¾è®¢çš„ç›¸å…³ä¿¡æ¯\t           ||\n");
+	printf("\t\t||\t2.æŸ¥æ‰¾æŸæœ¬æ•™æçš„ç›¸å…³ä¿¡æ¯\t           ||\n");
+	printf("\t\t||\t3.ä¿®æ”¹æŸæœ¬æ•™æçš„å¾è®¢æ•°é‡\t           ||\n");
+	printf("\t\t||\t4.åˆ é™¤æŸæœ¬æ•™æçš„ç›¸å…³ä¿¡æ¯	\t   ||\n");
+	printf("\t\t||\t5.ç»Ÿè®¡æ•™æçš„å¾è®¢æ€»æ•°ï¼Œè®¡ç®—å¾è®¢æ€»é‡‘é¢\t   ||\n");
+	printf("\t\t||\t6.å¯¹æ¯æœ¬æ•™æçš„å¾è®¢æ•°é‡è¿›è¡Œæ’å	\t   ||\n");
+	printf("\t\t||\t0.é€€å‡º	\t                           ||\n");
 	printf("\t\t___________________________________________________\n");
-	printf("\nÇëÊäÈëÄúÏëÖ´ĞĞµÄ²½ÖèĞòºÅ\n");
+	printf("\nè¯·è¾“å…¥æ‚¨æƒ³æ‰§è¡Œçš„æ­¥éª¤åºå·\n");
 
   } 
   
@@ -246,53 +246,53 @@ void deleteInformation(Node *List)
  	while(1)
 	 {
 	 	systemUI();
-	 	printf("¸ù¾İÌáÊ¾ÊäÈëÊı×Ö:\n");
+	 	printf("æ ¹æ®æç¤ºè¾“å…¥æ•°å­—:\n");
 	 	scanf("%d",&s);
 		 switch(s)
 		 {
-		 	case 1:printf("ĞèÒªÂ¼ÈëÊé±¾µÄÊıÁ¿");
+		 	case 1:printf("éœ€è¦å½•å…¥ä¹¦æœ¬çš„æ•°é‡");
 			 scanf("%d",&n);
 			 List = creaList(List,n);
 			 printf("\n");
 			 getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break;
 			 case 2: 
 			 searchIformation(List);
 			  printf("\n");
 			  getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break;
 			  case 3:reviseInformation(List);
 			 printf("\n");
 			 getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break;
 			 case 4:deleteInformation(List);
 			 printf("\n");
 			 getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break;
 			 case 5: caculateInformation(List);
 			  printf("\n");
 			  getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break; 
 			 case 6: sortNumber(List);;
 			  printf("\n");
 			  getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break; 
-			     default:printf("ÊäÈëÓĞÎó\n");
+			     default:printf("è¾“å…¥æœ‰è¯¯\n");
 			     printf("\n");
 			     getchar();
-			 printf("ÊäÈëÈÎÒâ¼ü·µ»Ø");
+			 printf("è¾“å…¥ä»»æ„é”®è¿”å›");
 			 getchar();
 			 system("cls");break;
 			 case 0:exit(0);
